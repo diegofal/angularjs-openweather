@@ -7,7 +7,6 @@ import onRun     from './on_run';
 import 'angular-ui-router';
 import 'angular-resource';
 import './templates';
-import './filters';
 import './controllers';
 import './services';
 import './directives';
@@ -17,7 +16,6 @@ const requires = [
   'ui.router',
   'ngResource',
   'templates',
-  'app.filters',
   'app.controllers',
   'app.services',
   'app.directives'

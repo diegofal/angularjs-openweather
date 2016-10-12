@@ -9,11 +9,6 @@ export default {
 
   vendor: {
     css: ['node_modules/bootstrap/dist/css/bootstrap.css'],
-    // js: [
-    //   'node_modules/angular/angular.min.js',
-    //   'node_modules/ngGeolocation/ngGeolocation.min.js',
-
-    // ]
   },
 
   styles: {

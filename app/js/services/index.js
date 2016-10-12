@@ -25,4 +25,7 @@ function declare(serviceMap) {
 
 declare(services);
 
+// declare some example locations
+servicesModule.value('exampleLocations',['Hamburg','San Francisco','Berlin','Athens','Tokyo','New York','Moscow','Clonakilty'])
+
 export default servicesModule;

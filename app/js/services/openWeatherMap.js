@@ -17,39 +17,19 @@ function openWeatherMap($http, $resource) {
         lang: 'en'
       },
       {
-        queryWeather: {
-          method: 'JSONP',
-          params: {
-            path: 'weather'
-          },
-          isArray: false,
-          headers: {
-            'x-api-key': apiKey
-          }
-        },
-        queryForecast: {
-          method: 'JSONP',
-          params: {
-            path: 'forecast'
-          },
-          isArray: false,
-          headers: {
-            'x-api-key': apiKey
-          }
-        },
         queryForecastDaily: {
           method: 'JSONP',
           params: {
             path: 'forecast',
             subPath: 'daily',
-            cnt: 7
+            cnt: 4
           },
           isArray: false,
           headers: {
             'x-api-key': apiKey
           }
         },
-        queryForecastDailyByGeographicLocation: {
+        queryForecastByGeographicLocation: {
           method: 'JSONP',
           params: {
             path: 'forecast',
