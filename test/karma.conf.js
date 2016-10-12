@@ -53,7 +53,18 @@ const karmaBaseConfig = {
 
 };
 
+const customLaunchers = {
+    Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+    }
+};
+
+const ciAdditions = {
+  browsers: Object.keys(customLaunchers),
+};
+
 module.exports = function(config) {
   const isCI = process.env.CI && Boolean(process.env.TRAVIS_PULL_REQUEST);
-  config.set(isCI ? Object.assign(karmaBaseConfig) : karmaBaseConfig);
+  config.set(isCI ? Object.assign(karmaBaseConfig, ciAdditions) : karmaBaseConfig);
 };
