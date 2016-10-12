@@ -53,26 +53,7 @@ const karmaBaseConfig = {
 
 };
 
-const customLaunchers = {
-  chrome: {
-    base: 'SauceLabs',
-    browserName: 'chrome'
-  }
-};
-
-const ciAdditions = {
-  sauceLabs: {
-    testName: 'Karma Unit Tests',
-    startConnect: false,
-    build: process.env.TRAVIS_BUILD_NUMBER,
-    tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
-  },
-  browsers: Object.keys(customLaunchers),
-  customLaunchers: customLaunchers,
-  reporters: ['progress', 'coverage', 'saucelabs']
-};
-
 module.exports = function(config) {
   const isCI = process.env.CI && Boolean(process.env.TRAVIS_PULL_REQUEST);
-  config.set(isCI ? Object.assign(karmaBaseConfig, ciAdditions) : karmaBaseConfig);
+  config.set(isCI ? Object.assign(karmaBaseConfig) : karmaBaseConfig);
 };
