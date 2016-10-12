@@ -1,5 +1,5 @@
 const AppSettings = {
-  defaultLocation: "London"
+	defaultLocation: 'London'
 };
 
 export default AppSettings;

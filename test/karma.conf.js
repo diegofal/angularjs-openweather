@@ -61,7 +61,7 @@ const customLaunchers = {
 };
 
 const ciAdditions = {
-  browsers: Object.keys(customLaunchers),
+  browsers: ['Chrome_travis_ci'],
 };
 
 module.exports = function(config) {
