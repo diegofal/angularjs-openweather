@@ -24,6 +24,8 @@ function buildScript(file) {
 
   let bundler = browserify({
     entries: [config.sourceDir + 'js/' + file],
+    // external: config.vendor.js,
+   // bundleExternal: false,
     debug: shouldCreateSourcemap,
     cache: {},
     packageCache: {},

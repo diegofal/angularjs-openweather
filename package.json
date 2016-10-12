@@ -32,8 +32,10 @@
     "unit": "cross-env NODE_ENV=test ./node_modules/.bin/gulp unit"
   },
   "dependencies": {
+    "angular-resource": "^1.2.31",
     "bootstrap": "^3.3.7",
-    "cross-env": "^3.1.1"
+    "cross-env": "^3.1.1",
+    "ngGeolocation": "0.0.7"
   },
   "devDependencies": {
     "angular": "^1.5.0",

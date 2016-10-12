@@ -5,6 +5,7 @@ gulp.task('dev', ['clean'], function(cb) {
 
   global.isProd = false;
 
-  runSequence(['styles', 'vendor', 'images', 'fonts', 'views'], 'browserify', 'watch', cb);
+  runSequence(['styles', 'vendorCss', 'images', 'fonts', 'views'], 'browserify', 'watch', cb);
 
 });
+	

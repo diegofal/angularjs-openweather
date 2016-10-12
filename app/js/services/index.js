@@ -5,6 +5,7 @@ const servicesModule = angular.module('app.services', []);
 const services = bulk(__dirname, ['./**/!(*index|*.spec).js']);
 
 function declare(serviceMap) {
+  console.log(serviceMap);
   Object.keys(serviceMap).forEach((key) => {
     let item = serviceMap[key];
 
@@ -13,6 +14,8 @@ function declare(serviceMap) {
     }
 
     if (item.fn && typeof item.fn === 'function') {
+      console.log(item.name);
+      console.log(item.fn);
       servicesModule.service(item.name, item.fn);
     } else {
       declare(item);
