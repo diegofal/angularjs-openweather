@@ -53,14 +53,13 @@ const karmaBaseConfig = {
 
 };
 
-const customLaunchers = {
+const ciAdditions = {
+  customLaunchers:{
     Chrome_travis_ci: {
         base: 'Chrome',
         flags: ['--no-sandbox']
     }
-};
-
-const ciAdditions = {
+  }
   browsers: ['Chrome_travis_ci'],
 };
 
