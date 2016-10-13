@@ -11,8 +11,7 @@ function HomeCtrl(openWeatherMap, geolocation, AppSettings, $q) {
   me.getForecast = function(){
     var deferred = $q.defer();
 
-    var currentPosition = geolocation.getCurrentPosition();
-    currentPosition
+    geolocation.getCurrentPosition()
       .then(function(currentPosition){
         getForecastByGreographicLocation(currentPosition, deferred);
       }, function(){

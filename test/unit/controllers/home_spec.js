@@ -31,10 +31,13 @@ describe('Unit: HomeCtrl', function() {
 
   describe('getForecast', function() {
     it('retrieves the current forecast for custom position', function() {
+      //setup mocks
       spyOn(_openWeatherMapService, 'queryForecastByGeographicLocation').and.returnValue({'$promise': _weatherPromiseDeferred.promise})
 
+      // initiate controller. This will execute tested method
       let ctrl = _createController();
 
+      // resolve promises
       _currentPositionPromiseDeferred.resolve(
         { 
           coords: 
@@ -48,6 +51,7 @@ describe('Unit: HomeCtrl', function() {
       // get promises fulfilled
       _$rootScope.$apply();
 
+      // check test results
       expect(_openWeatherMapService.queryForecastByGeographicLocation).toHaveBeenCalled();
       expect(_geolocationService.getCurrentPosition).toHaveBeenCalled();
       expect(ctrl.forecast).not.toBe(undefined);
@@ -55,8 +59,10 @@ describe('Unit: HomeCtrl', function() {
     });
 
     it('retrieves the current forecast for London', function() {
+      //setup mocks
       spyOn(_openWeatherMapService, 'queryForecastDaily').and.returnValue({'$promise': _weatherPromiseDeferred.promise})
       
+      // initiate controller. This will execute tested method
       let ctrl = _createController();
 
       _currentPositionPromiseDeferred.reject({});
@@ -64,6 +70,8 @@ describe('Unit: HomeCtrl', function() {
 
       // get promises fulfilled
       _$rootScope.$apply();
+
+      // check test results
 
       expect(_openWeatherMapService.queryForecastDaily).toHaveBeenCalled();
       expect(_geolocationService.getCurrentPosition).toHaveBeenCalled();

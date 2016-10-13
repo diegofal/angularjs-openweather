@@ -28,3 +28,16 @@ This boilerplate uses the latest versions of the following libraries:
 
 Along with many Gulp libraries (these can be seen in either `package.json`, or at the top of each task in `/gulp/tasks/`).
 
+---
+
+### Testing
+
+##### Unit Tests
+
+Unit tests are used to test a single module (or "unit") at a time in order to ensure that each module performs as intended individually. In AngularJS this could be thought of as a single controller, directive, filter, service, etc. That is how the unit tests are organized in this boilerplate.
+
+All unit tests are run with `npm run unit`. When running unit tests, code coverage is simultaneously calculated and output as an HTML file to the `/coverage` directory.
+
+##### On this repository
+
+The tests included in this sample play from simple value testing, to advance nested promises inside the calling methods. Dive into the code to find more details! 

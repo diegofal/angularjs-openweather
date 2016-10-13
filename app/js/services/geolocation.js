@@ -3,28 +3,19 @@ function geolocation($rootScope, $window, $q) {
 
   const service = {};
 
-  function supported() {
+  service.supported = function(){
       return 'geolocation' in $window.navigator;
   }
 
   service.getCurrentPosition = function(options){
     var deferred = $q.defer();
 
-    if(supported()) {
-      
-        $window.navigator.geolocation.getCurrentPosition(
-            function(position) {
-
-                $rootScope.$apply(function() {
-                    deferred.resolve(position);
-                });
-            },
-            function(error) {
-
-                $rootScope.$apply(function() {
-                    deferred.reject({error: error});
-                });
-            }, options);
+    if(service.supported()) {
+        $window.navigator.geolocation.getCurrentPosition(function(position){
+          $rootScope.$apply(function() {
+                  deferred.resolve(position);
+              });
+        });
     } else {
         deferred.reject({error: {
             code: 2,
