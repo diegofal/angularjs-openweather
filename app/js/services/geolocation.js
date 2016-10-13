@@ -1,4 +1,4 @@
-function Geolocation($rootScope, $window, $q) {
+function geolocation($rootScope, $window, $q) {
   'ngInject';
 
   const service = {};
@@ -9,14 +9,18 @@ function Geolocation($rootScope, $window, $q) {
 
   service.getCurrentPosition = function(options){
     var deferred = $q.defer();
+
     if(supported()) {
+      
         $window.navigator.geolocation.getCurrentPosition(
             function(position) {
+
                 $rootScope.$apply(function() {
                     deferred.resolve(position);
                 });
             },
             function(error) {
+
                 $rootScope.$apply(function() {
                     deferred.reject({error: error});
                 });
@@ -30,15 +34,13 @@ function Geolocation($rootScope, $window, $q) {
     return deferred.promise;
   }
 
-
   return service;
-
 }
 
-  Geolocation.$inject = ['$rootScope', '$window', '$q'];
+  geolocation.$inject = ['$rootScope', '$window', '$q'];
 
 
 export default {
-  name: 'Geolocation',
-  fn: Geolocation
+  name: 'geolocation',
+  fn: geolocation
 };

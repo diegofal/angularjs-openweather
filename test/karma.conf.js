@@ -49,7 +49,14 @@ const karmaBaseConfig = {
 
     // test files
     'test/unit/**/*.js'
-  ]
+  ],
+
+  client: {
+      captureConsole: true,
+      mocha: {
+        bail: true
+      }
+    }
 
 };
 

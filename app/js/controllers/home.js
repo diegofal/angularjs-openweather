@@ -1,30 +1,54 @@
 
-function HomeCtrl(openWeatherMap, Geolocation, AppSettings) {
+function HomeCtrl(openWeatherMap, geolocation, AppSettings, $q) {
   var me = this;
-
-  me.getForecastByCity = function(location){
+  
+  me.getForecastByCustomLocation = function(customLocation){
   	me.forecast = openWeatherMap.api().queryForecastDaily({
-	      location: location
-	});
+	      location: customLocation
+	  });
   }
 
-  Geolocation.getCurrentPosition()
-  	.then(function(currentPosition){
-  		 me.forecast = openWeatherMap.api().queryForecastByGeographicLocation({
-		      lat: currentPosition.coords.latitude,
-		      lon: currentPosition.coords.longitude
-		  });
-  		
-  	}, function(){
-  		me.locationDisabled = true;
+  me.getForecast = function(){
+    var deferred = $q.defer();
 
-  		me.forecast = openWeatherMap.api().queryForecastDaily({
-		      location: AppSettings.defaultLocation
-		});
-  	})
+    var currentPosition = geolocation.getCurrentPosition();
+    currentPosition
+      .then(function(currentPosition){
+        getForecastByGreographicLocation(currentPosition, deferred);
+      }, function(){
+        getForecastByDefaultLocation(deferred);
+    })
+
+    return deferred.promise;
+  }
+
+  function getForecastByGreographicLocation(currentPosition, deferred){
+    me.locationDisabled = false;
+
+    openWeatherMap.queryForecastByGeographicLocation({
+        lat: currentPosition.coords.latitude,
+        lon: currentPosition.coords.longitude
+    }).$promise.then(function(forecast){
+      me.forecast = forecast;
+      deferred.resolve(me.forecast);
+    });
+  }
+
+  function getForecastByDefaultLocation(deferred){
+    me.locationDisabled = true;
+
+    openWeatherMap.queryForecastDaily({
+        location: AppSettings.defaultLocation
+    }).$promise.then(function(forecast){
+      me.forecast = forecast;
+      deferred.resolve(me.forecast);
+    });
+  }
+
+  me.getForecast();
 }
 
-HomeCtrl.$inject = ['openWeatherMap', 'Geolocation', 'AppSettings'];
+HomeCtrl.$inject = ['openWeatherMap', 'geolocation', 'AppSettings', '$q'];
 
 export default {
   name: 'HomeCtrl',
