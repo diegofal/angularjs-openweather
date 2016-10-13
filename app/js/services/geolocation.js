@@ -7,7 +7,7 @@ function geolocation($rootScope, $window, $q) {
       return 'geolocation' in $window.navigator;
   }
 
-  service.getCurrentPosition = function(options){
+  service.getCurrentPosition = function(){
     var deferred = $q.defer();
 
     if(service.supported()) {

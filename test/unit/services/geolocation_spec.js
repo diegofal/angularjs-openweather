@@ -1,6 +1,6 @@
 describe('Unit: GeolocationService', function() {
 
-  let _geolocationService, _$rootScope, _$window, _$q;
+  let _geolocationService, _$rootScope, _$window;
 
   beforeEach(function() {
     // instantiate the app module
@@ -11,7 +11,6 @@ describe('Unit: GeolocationService', function() {
       _geolocationService = geolocation;
       _$rootScope = $rootScope;
       _$window = $window;
-      _$q = $q;
     });
   });
 
