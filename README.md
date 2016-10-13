@@ -1,6 +1,6 @@
 AngularJS - OpenWeatherAPI
 =====================================
-[![Build Status](https://travis-ci.org/jakemmarsh/angularjs-gulp-browserify-boilerplate.svg)](https://travis-ci.org/jakemmarsh/angularjs-gulp-browserify-boilerplate) [![dependencies Status](https://david-dm.org/jakemmarsh/angularjs-gulp-browserify-boilerplate/status.svg)](https://david-dm.org/jakemmarsh/angularjs-gulp-browserify-boilerplate) [![devDependency Status](https://david-dm.org/jakemmarsh/angularjs-gulp-browserify-boilerplate/dev-status.svg)](https://david-dm.org/jakemmarsh/angularjs-gulp-browserify-boilerplate#info=devDependencies)
+[![Build Status](https://travis-ci.org/diegofalciola/angularjs-openweather.svg?branch=master)](https://travis-ci.org/diegofalciola/angularjs-openweather) [![dependencies Status](https://david-dm.org/diegofalciola/angularjs-openweather/status.svg)](https://david-dm.org/diegofalciola/angularjs-openweather) [![devDependencies Status](https://david-dm.org/diegofalciola/angularjs-openweather/dev-status.svg)](https://david-dm.org/diegofalciola/angularjs-openweather?type=dev) 
 
 A sample application using [these best AngularJS practices](https://github.com/toddmotto/angularjs-styleguide)  and Gulp best practices from [this resource](https://github.com/greypants/gulp-starter), demostrating an implementation of OpenWeatherAPI.
 
