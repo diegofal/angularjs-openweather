@@ -10,7 +10,7 @@ function WeatherPanel() {
 
       templateUrl: 'directives/weatherPanel.html',
 
-      link: function(scope, element) {
+      link: function(scope) {
         // Get icon image url
         scope.getIconImageUrl = function(iconName) {
           return (iconName ? 'http://openweathermap.org/img/w/' + iconName + '.png' : '');

@@ -1,5 +1,3 @@
-/*global browser, by */
-
 describe('E2E: Example', function() {
 
   beforeEach(function() {

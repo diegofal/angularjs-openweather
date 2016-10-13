@@ -21,7 +21,7 @@ describe('Unit: HomeCtrl', function() {
 
       spyOn(_geolocationService, 'getCurrentPosition').and.returnValue(_currentPositionPromiseDeferred.promise)
 
-      _createController = function(params) {
+      _createController = function() {
         return $controller('HomeCtrl', {
           geolocation: _geolocationService
         });

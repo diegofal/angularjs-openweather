@@ -62,12 +62,12 @@ const karmaBaseConfig = {
 
 const ciAdditions = {
   customLaunchers:{
-    Chrome_travis_ci: {
+    chromeTravisCi: {
         base: 'Chrome',
         flags: ['--no-sandbox']
     }
   },
-  browsers: ['Chrome_travis_ci'],
+  browsers: ['chromeTravisCi'],
 };
 
 module.exports = function(config) {
