@@ -10,9 +10,9 @@ A sample application using [these best AngularJS practices](https://github.com/t
 
 ### Demo
 
-Click <a href='http://54.210.89.240/'>the following link</a> to see this app in action.
+Click <a target='_blank' href='http://54.210.89.240/'>the following link</a> to see this app in action.
 
-Bear in mind that it will not work in chrome, since geolocation needs https protocol to work on this browser. More info <a href='https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins'>here</a>
+Bear in mind that it will not work in chrome, since geolocation needs https protocol to work on this browser. More info <a target='_blank' href='https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins'>here</a>
 
 ---
 
