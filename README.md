@@ -8,6 +8,14 @@ A sample application using [these best AngularJS practices](https://github.com/t
 
 ---
 
+### Demo
+
+Click <a href='http://54.210.89.240/'>the following link</a> to see this app in action.
+
+Bear in mind that it will not work in chrome, since geolocation needs https protocol to work on this browser. More info <a href='https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins'>here</a>
+
+---
+
 ### Getting up and running
 
 1. Clone this repo from `https://github.com/diegofalciola/angularjs-openweather.git`
@@ -16,6 +24,7 @@ A sample application using [these best AngularJS practices](https://github.com/t
 4. Your browser will automatically be opened and directed to the browser-sync proxy address
 
 Now that `npm run dev` is running, the server is up as well and serving files from the `/build` directory. Any changes in the `/app` directory will be automatically processed by Gulp and the changes will be injected to any open browsers pointed at the proxy address.
+
 
 ---
 
